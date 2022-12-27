@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 18</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <section class="login-page" id="login-page">
+
+    <div class="login">
+      <h2 class="title">Login</h2>
+      <input class="modal-ip" type="text" name="login" placeholder="Login" value="eve.holt@reqres.in" id="loginName"/>
+      <input class="modal-ip" type="password" name="password" placeholder="Password" id="loginPass"/>
+      
+      <div class="error-container">
+        <span id="error" class="error"></span>
+      </div>
+    
+      <button type="button" class="button button-green" id="login-btn">Login</button>
+
+    </div>
+
+  </section>
+
+  <section class="user-page hide" id="user-page">
+
+    <div class="modal hide" id="modalCreate">
+      <h2 class="title">New User</h2>
+      <input class="modal-ip" type="text" name="first name" placeholder="First Name" id="userFirstName"/>
+      <input class="modal-ip" type="text" name="last name" placeholder="Last Name" id="userLastName"/>
+      <input class="modal-ip" type="email" name="email" placeholder="Email" id="userEmail"/>
+      <input class="modal-ip" type="text" name="job" placeholder="Job" id="userJob"/>
+      <button id="action-create" type="button" class="button button-green">Create User</button>
+    </div>
+
+    <div class="modal hide" id="modalUpdate">
+      <h2 class="title">Update User</h2>
+      <input class="modal-ip" type="text" name="first name" placeholder="" id="updateFirstName"/>
+      <input class="modal-ip" type="text" name="last name" placeholder="" id="updateLastName"/>
+      <input class="modal-ip" type="email" name="email" placeholder="" id="updateEmail"/>
+      <input class="modal-ip" type="text" name="job" placeholder="" id="updateJob"/>
+      <button id="action-update" type="button" class="button button-green">Update User</button>
+    </div>
+
+    <div class="wrapper">
+      <div class="btn-container">
+          <button id="action-prew" class="button button-blue">Prewious</button>
+          <button id="action-new" class="button button-green">Create</button>
+          <button id="action-next" class="button button-blue">Next</button>
+      </div>
+      <div class="container-card" id="card-container"></div>
+    </div>
+
+  </section>
+
+  <script type="text/template" id="card-template">
+      <div class="user-card" id="{{user-id}}" data-firstName = {{data-firstName}} data-lastName = {{data-lastName}} data-email = {{data-email}} data-job = {{data-job}}>
+          <div class="card-header">
+              <img src="{{avatar}}" alt="{{name}}" />
+          </div>
+
+          <div class="card-body">
+              
+            <h3 class="user-name">{{name}}</h4>
+            <h3 class="user-info">{{email}}</h4>
+            <h3 class="user-job">{{job}}</h4>
+    
+            <div class="buttons">
+                <button class="update button button-green" data-update = {{data-update}}>Update</button>
+                <button class="delete button button-red" data-delete = {{data-del}}>Delete</button>
+            </div>
+  
+          </div>
+      </div>
+  </script>
+
+</body>
+</html>
